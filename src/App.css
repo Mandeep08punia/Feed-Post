@@ -3,7 +3,7 @@
 }
 .app{
   background-color: #fafafa;
-  height: 100vh;
+  
 }
 .app_header{
   object-fit: contain;
@@ -15,4 +15,8 @@
 #logo{
   max-width: 7%;
   height:auto; 
+}
+.app_signup{
+  display: flex;
+  flex-direction: column;
 }
