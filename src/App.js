@@ -1,12 +1,13 @@
 import React,{useState,useEffect} from 'react';
 import './App.css';
 import image from './assets/images/C.png'
+import image1 from './assets/images/ModalImage.jpeg'
 import Post from './component/Post';
 import Modal from '@material-ui/core/Modal'
-import video1 from './assets/videos/Struggler.mp4'
 import { makeStyles } from '@material-ui/core/styles';
 import {db,auth} from './firebase';
 import { Button, Input } from '@material-ui/core';
+import VideoUpload from './component/VideoUpload';
 
 function getModalStyle() {
   const top = 50 ;
@@ -41,7 +42,7 @@ function App() {
   const [openSignIn,setOpenSignIn]=useState('');
   const [user,setUser]=useState(false);
   useEffect(()=>{
-    db.collection('posts').onSnapshot(snapshot=>{
+    db.collection('posts').orderBy('timestamp','desc').onSnapshot(snapshot=>{
       setPosts(snapshot.docs.map(doc=>({
         id:doc.id,
         post:doc.data()})))
@@ -60,7 +61,7 @@ function App() {
       }
     })
     return ()=>{
-      //perform some cleanup actions before firing up the backend listener
+      
       unsubscribe();
     }
 
@@ -89,11 +90,12 @@ function App() {
 
   return (
     <div className="app">
-      
+    
+    
+
       <div className="app_header">
         <img src={image} alt="logo" class="app_headerImage" id="logo"/>
-      </div>
-      {
+        {
         user?(
           <Button color="primary"  type="button" onClick={()=>auth.signOut()}>
         Log Out
@@ -105,13 +107,16 @@ function App() {
           </div>
         )
       }
+      
+      </div>
+      
       <Modal
         open={openSignIn}
         onClose={()=>setOpenSignIn(false)}>
         <div style={modalStyle} className={classes.paper}>
       <form className="app_signup">
       <center>
-      {/*Logo here */}
+      <img src={image1} alt="logo"/>
       </center>
       
         <Input placeholder="email" type="text" value={email} onChange={(e)=>setEmail(e.target.value)}/>
@@ -128,7 +133,7 @@ function App() {
         <div style={modalStyle} className={classes.paper}>
       <form className="app_signup">
       <center>
-      {/*Logo here */}
+      <img src={image1} alt="logo"/>
       </center>
       <Input placeholder="username" type="text" value={username} onChange={(e)=>setUsername(e.target.value)}/>
         <Input placeholder="email" type="text" value={email} onChange={(e)=>setEmail(e.target.value)}/>
@@ -138,15 +143,24 @@ function App() {
       
     </div>
       </Modal>
-    
-
-
+    <div className="app_posts">
+            
     {
       posts.map(({id,post})=>(
         <Post key={id} username={post.username} caption={post.caption} videoUrl={post.videoUrl}/>
       ))
     }
-      
+
+  {user?.displayName ?(
+      <VideoUpload username={user.displayName}/>
+    ):(
+      <h3>Login to Upload</h3>
+    )
+    }
+
+    </div>
+
+
     </div>
   );
 }

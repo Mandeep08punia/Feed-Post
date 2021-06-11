@@ -3,18 +3,26 @@
 }
 .app{
   background-color: #fafafa;
-  
+
 }
 .app_header{
+  display: flex;
+  justify-content: space-between;
   object-fit: contain;
   background-color: white;
   padding: 5px;
   border-bottom: 1px solid lightgray;
 }
+.app_posts{
+  padding: 20px;
+}
 
 #logo{
   max-width: 7%;
   height:auto; 
+}
+.app_headerImage{
+  object-fit: contain;
 }
 .app_signup{
   display: flex;
