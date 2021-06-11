@@ -121,7 +121,7 @@ function App() {
       
         <Input placeholder="email" type="text" value={email} onChange={(e)=>setEmail(e.target.value)}/>
         <Input placeholder="password" type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
-     <Button onClick={signIn}>SIGN In</Button>  
+     <Button color="primary" variant="contained" onClick={signIn}>SIGN In</Button>  
       </form>
       
     </div>
@@ -138,7 +138,7 @@ function App() {
       <Input placeholder="username" type="text" value={username} onChange={(e)=>setUsername(e.target.value)}/>
         <Input placeholder="email" type="text" value={email} onChange={(e)=>setEmail(e.target.value)}/>
         <Input placeholder="password" type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
-     <Button onClick={signUp}>SIGN UP</Button>  
+     <Button color="primary" variant="contained" onClick={signUp}>SIGN UP</Button>  
       </form>
       
     </div>
@@ -151,14 +151,14 @@ function App() {
       ))
     }
 
-  {user?.displayName ?(
+  
+    </div>
+    {user?.displayName ?(
       <VideoUpload username={user.displayName}/>
     ):(
       <h3>Login to Upload</h3>
     )
     }
-
-    </div>
 
 
     </div>

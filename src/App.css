@@ -14,6 +14,9 @@
   border-bottom: 1px solid lightgray;
 }
 .app_posts{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
   padding: 20px;
 }
 
