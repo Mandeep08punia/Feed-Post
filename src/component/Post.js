@@ -10,7 +10,7 @@ function Post({username,caption,videoUrl}) {
             <h3>{username}</h3>
             </div>
             
-            <img src={videoUrl}  className="post_video"/>
+            <video src={videoUrl} controls  className="post_video"/>
             
             <h4 className="post_text"><strong>{username}</strong> {caption}</h4>
         </div>
