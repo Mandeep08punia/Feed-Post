@@ -57,7 +57,7 @@ function VideoUpload({username}) {
         <div className="videoUpload">
             <progress className="videoUpload_progress" value={progress} max="100"/>        
             <input type="text" placeholder='Enter a caption' onChange={event=>setCaption(event.target.value)} value={caption}/>
-            <input type="file" onChange={handleChange}/>
+            <input type="file" accept="image/png, image/jpeg ,video/mp4" onChange={handleChange}/>
             <Button className="videoUrl" onClick={handleUpload}>Upload</Button>
         </div>
     )
