@@ -1,4 +1,4 @@
-# Cipher school intern
+# Stream Post
 
 ## Full stack project with MVP features 
 ###  Features:- User can login,logout
