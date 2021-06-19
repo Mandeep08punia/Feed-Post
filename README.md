@@ -1,4 +1,4 @@
-# Stream Post
+# Feed Post
 
 ## Full stack project with MVP features 
 ###  Features:- User can login,logout
