@@ -1,11 +1,11 @@
 import firebase from 'firebase';
 const firebaseApp=firebase.initializeApp({
-    apiKey: "AIzaSyBfc6N-Th8BjXQAuSdZFmSSJej8IZCHNEs",
-    authDomain: "cipher-school-intern.firebaseapp.com",
-    projectId: "cipher-school-intern",
-    storageBucket: "cipher-school-intern.appspot.com",
-    messagingSenderId: "928775776265",
-    appId: "1:928775776265:web:7a484591b896c817f1f0d8"
+    apiKey: "AIzaSyBhI6z42IMH34OCYApO856AKM2W3Zis1mE",
+    authDomain: "feed-post-a7804.firebaseapp.com",
+    projectId: "feed-post-a7804",
+    storageBucket: "feed-post-a7804.appspot.com",
+    messagingSenderId: "832553750587",
+    appId: "1:832553750587:web:505f0fef3859b20f558c1e"
 });
 
 const db=firebaseApp.firestore();

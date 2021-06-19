@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import './App.css';
-import image from './assets/images/C.png'
-import image1 from './assets/images/ModalImage.jpeg'
+import image from './assets/images/Header.png'
+import image1 from './assets/images/ModalImage.jpg'
 import Post from './component/Post';
 import Modal from '@material-ui/core/Modal'
 import { makeStyles } from '@material-ui/core/styles';
