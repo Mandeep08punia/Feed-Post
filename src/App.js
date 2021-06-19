@@ -91,8 +91,6 @@ function App() {
   return (
     <div className="app">
     
-    
-
       <div className="app_header">
         <img src={image} alt="logo" class="app_headerImage" id="logo"/>
         {
@@ -119,8 +117,8 @@ function App() {
       <img src={image1} alt="logo"/>
       </center>
       
-        <Input placeholder="email" type="text" value={email} onChange={(e)=>setEmail(e.target.value)}/>
-        <Input placeholder="password" type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+        <Input placeholder="email" type="text" value={email} required onChange={(e)=>setEmail(e.target.value)}/>
+        <Input placeholder="password" type="password"  value={password} required onChange={(e)=>setPassword(e.target.value)}/>
      <Button color="primary" variant="contained" onClick={signIn}>SIGN In</Button>  
       </form>
       
@@ -135,9 +133,9 @@ function App() {
       <center>
       <img src={image1} alt="logo"/>
       </center>
-      <Input placeholder="username" type="text" value={username} onChange={(e)=>setUsername(e.target.value)}/>
-        <Input placeholder="email" type="text" value={email} onChange={(e)=>setEmail(e.target.value)}/>
-        <Input placeholder="password" type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+      <Input placeholder="username" type="text" value={username} required onChange={(e)=>setUsername(e.target.value)}/>
+        <Input placeholder="email" type="text" value={email} required onChange={(e)=>setEmail(e.target.value)}/>
+        <Input placeholder="password" type="password" value={password} required onChange={(e)=>setPassword(e.target.value)}/>
      <Button color="primary" variant="contained" onClick={signUp}>SIGN UP</Button>  
       </form>
       
@@ -147,7 +145,7 @@ function App() {
             
     {
       posts.map(({id,post})=>(
-        <Post key={id} username={post.username} caption={post.caption} videoUrl={post.videoUrl}/>
+        <Post key={id} postId={id} user={user} username={post.username} caption={post.caption} videoUrl={post.videoUrl}/>
       ))
     }
 
@@ -156,7 +154,7 @@ function App() {
     {user?.displayName ?(
       <VideoUpload username={user.displayName}/>
     ):(
-      <h3>Login to Upload</h3>
+      <h3>To Upload the Post and comment,Login</h3>
     )
     }
 
